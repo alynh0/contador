@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="container">
+        <button id="buttonDecrement">-</button>
+        <input type="text" value="0" disabled id="counterValue">
+        <button id="buttonIncrement">+</button>
+    </div>
+
+
+    <script>
+        const counter = document.querySelector("#counterValue");
+        const buttonDecrement = document.querySelector("#buttonDecrement");
+        const buttonIncrement = document.querySelector("#buttonIncrement");
+
+        let value = counter.value;
+
+        buttonIncrement.addEventListener("click", () => {
+        value = ++value;
+        counter.value = value;
+        });
+        buttonDecrement.addEventListener("click", () => {
+        value = value !== 0 ? --value : 0;
+        counter.value = value;
+        });
+
+    </script>
+
+</body>
+</html>
